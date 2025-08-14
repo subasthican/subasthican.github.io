@@ -4,143 +4,232 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subasthican Portfolio</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Subasthican</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item">
-            <button id="toggleTheme" class="btn btn-light btn-sm ms-3">🌙</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Hello, I'm Subasthican</h1>
-    <p>BSc IT Student | Aspiring Web Developer</p>
-    <a href="#projects" class="btn btn-warning btn-lg mt-3">See My Work</a>
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Subasthican</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="#contact" class="btn-github"><i class="fab fa-github"></i> GitHub</a></li>
+      </ul>
+      <button id="toggleTheme">🌙</button>
+    </nav>
   </header>
 
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm Subasthican</h1>
+      <p>BSc IT Student | Aspiring Web Developer | MERN Stack Enthusiast</p>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+  </section>
+
   <!-- About Section -->
-  <section id="about" class="container text-center">
+  <section id="about">
     <h2>About Me</h2>
-    <p>I am a BSc IT student passionate about programming, web development, and creating solutions for real-world problems.</p>
+    <p>
+      I am a passionate and dedicated Year 2 BSc IT student at SLIIT, constantly exploring the latest in technology and web development. My focus lies in building dynamic, responsive, and user-friendly applications with modern frameworks like MERN stack. 
+      I love problem-solving, learning new languages, and contributing to real-world projects that make an impact. Creativity, innovation, and attention to detail define my approach to coding and project management.
+    </p>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="container text-center">
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="row justify-content-center g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#project1Modal">
-          <div class="card-body">
-            <h5 class="card-title">MERN E-commerce Website</h5>
-            <p class="card-text">Full-stack project with React, Node, Express, MongoDB. Includes product catalog and checkout.</p>
-          </div>
-        </div>
+    <div class="projects-container">
+      <div class="project-card" onclick="openModal('project1')">
+        <h3>Construction Management Project</h3>
+        <p>Customer Management module with full CRUD by 5 members at SLIIT.</p>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#project2Modal">
-          <div class="card-body">
-            <h5 class="card-title">Java Threads & Design Patterns</h5>
-            <p class="card-text">Java projects demonstrating multithreading, synchronization, and basic design patterns.</p>
-          </div>
-        </div>
+      <div class="project-card" onclick="openModal('project2')">
+        <h3>Online Tour Guide</h3>
+        <p>Developed by 4 members. My contribution: login/register, profile management, user & admin dashboards, full CSS styling.</p>
+      </div>
+      <div class="project-card" onclick="openModal('project3')">
+        <h3>DollarsElectro.lk (Ongoing)</h3>
+        <p>MERN Stack Electronic Shop Project (React, Node.js, Express, MongoDB).</p>
+      </div>
+      <div class="project-card" onclick="openModal('project4')">
+        <h3>MERN Sample Project</h3>
+        <p>Simple MERN application demonstrating CRUD operations with MongoDB, Express, React, and Node.js.</p>
+      </div>
+      <div class="project-card" onclick="openModal('project5')">
+        <h3>First Mobile App</h3>
+        <p>My first Android mobile app featuring a simple LinearLayout login page.</p>
       </div>
     </div>
   </section>
 
   <!-- Project Modals -->
-  <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">MERN E-commerce Website</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p>Full-stack MERN project with React frontend, Node/Express backend, MongoDB database. Features: product catalog, cart, checkout, responsive UI.</p>
-        </div>
-      </div>
+  <div id="project1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project1')">&times;</span>
+      <h3>Construction Management Project</h3>
+      <p>Customer Management module with full CRUD (Insert, Update, Delete, Read) by 5 members at SLIIT.</p>
     </div>
   </div>
-
-  <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Java Threads & Design Patterns</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p>Java project demonstrating multithreading, synchronization, and basic design patterns like Singleton, Strategy, and Command.</p>
-        </div>
-      </div>
+  <div id="project2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project2')">&times;</span>
+      <h3>Online Tour Guide</h3>
+      <p>Developed by 4 members at SLIIT. My contribution: login/register, home page, profile management (user & admin dashboards), full CSS styling.</p>
+    </div>
+  </div>
+  <div id="project3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project3')">&times;</span>
+      <h3>DollarsElectro.lk (Ongoing)</h3>
+      <p>MERN Stack Electronic Shop Project – React, Node.js, Express, MongoDB. Built for real-world scalability.</p>
+    </div>
+  </div>
+  <div id="project4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project4')">&times;</span>
+      <h3>MERN Sample Project</h3>
+      <p>A simple MERN stack application demonstrating CRUD operations with MongoDB, Express, React, and Node.js.</p>
+    </div>
+  </div>
+  <div id="project5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project5')">&times;</span>
+      <h3>First Mobile App</h3>
+      <p>My first Android mobile app featuring a simple LinearLayout login page.</p>
     </div>
   </div>
 
   <!-- Skills Section -->
-  <section id="skills" class="container text-center">
+  <section id="skills">
     <h2>Skills</h2>
-    <div class="skills d-flex flex-wrap justify-content-center">
-      <span class="badge">HTML</span>
-      <span class="badge">CSS</span>
-      <span class="badge">JavaScript</span>
-      <span class="badge">React.js</span>
+    <div class="skills-container">
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+        <p>C</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+        <p>C++</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+        <p>Java</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+        <p>HTML5</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+        <p>CSS3</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+        <p>React</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+        <p>Node.js</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" />
+        <p>Express</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+        <p>MongoDB</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        <p>Git</p>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        <p>GitHub</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="container text-center">
+  <section id="contact">
     <h2>Contact Me</h2>
-    <p>Email: manoharansubasthican@gmail.com</p>
-    <p>Phone: 0711300812</p>
-    <form id="contact-form" class="d-flex flex-column align-items-center gap-3">
-      <input type="text" name="from_name" class="form-control w-75" placeholder="Your Name" required>
-      <input type="email" name="reply_to" class="form-control w-75" placeholder="Your Email" required>
-      <textarea name="message" class="form-control w-75" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn btn-primary btn-lg w-50">Send Message</button>
+    <p><i class="fas fa-envelope"></i> Email: manoharansubasthican@gmail.com</p>
+    <p><i class="fas fa-phone"></i> Phone: 0711300812</p>
+    <div class="contact-buttons">
+      <a href="https://www.linkedin.com/in/manoharan-subasthican/" target="_blank" class="btn-contact"><i class="fab fa-linkedin"></i> Click Here for LinkedIn</a>
+      <a href="https://github.com/manoharan-subasthican" target="_blank" class="btn-contact"><i class="fab fa-github"></i> Click Here for GitHub</a>
+    </div>
+    <form id="contact-form">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="reply_to" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
       <p id="form-message"></p>
     </form>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Subasthican. All rights reserved.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom JS for Dark Mode -->
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
+    // ✅ Public key inserted
+    emailjs.init("nRraUnvceKiCwmDPe");
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior:'smooth' });
+      });
+    });
+
     const toggleBtn = document.getElementById('toggleTheme');
     toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+
+    function openModal(id){ document.getElementById(id).style.display='flex'; }
+    function closeModal(id){ document.getElementById(id).style.display='none'; }
+    window.onclick = e => { if(e.target.classList.contains('modal')) e.target.style.display='none'; }
+
+    const heroContent = document.querySelector('.hero-content');
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      heroContent.style.transform = `translateY(${scroll * -0.2}px)`;
+      heroContent.style.opacity = `${Math.max(0, 1 - scroll / 400)}`;
+    });
+
+    // EmailJS Form Submission
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      emailjs.sendForm('service_d8srjr2', 'template_default', this)
+      .then(function(){
+        formMessage.style.color = 'green';
+        formMessage.textContent = 'Message sent successfully! You will receive it in your Gmail.';
+        form.reset();
+      }, function(error){
+        formMessage.style.color = 'red';
+        formMessage.textContent = 'Failed to send message. Please try again.';
+        console.error('EmailJS Error:', error);
+      });
     });
   </script>
 </body>
