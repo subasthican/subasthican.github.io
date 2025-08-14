@@ -4,101 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subasthican Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <div class="logo">Subasthican</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="toggleTheme">🌙</button>
-    </nav>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <h1>Hello, I'm Subasthican</h1>
-      <p>BSc IT Student | Aspiring Web Developer</p>
-      <a href="#projects" class="btn">See My Work</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Subasthican</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hello, I'm Subasthican</h1>
+    <p>BSc IT Student | Aspiring Web Developer</p>
+    <a href="#projects" class="btn btn-warning btn-lg mt-3">See My Work</a>
   </header>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="container text-center">
     <h2>About Me</h2>
     <p>I am a BSc IT student passionate about programming, web development, and creating solutions for real-world problems.</p>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" class="container text-center">
     <h2>Projects</h2>
-    <div class="projects-container">
-      <div class="project-card" onclick="openModal('project1')">
-        <h3>MERN E-commerce Website</h3>
+    <div class="row justify-content-center g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">MERN E-commerce Website</h5>
+            <p class="card-text">Full-stack project with React, Node, Express, MongoDB. Includes product catalog and checkout.</p>
+          </div>
+        </div>
       </div>
-      <div class="project-card" onclick="openModal('project2')">
-        <h3>Java Threads & Design Patterns</h3>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Java Threads & Design Patterns</h5>
+            <p class="card-text">Java projects demonstrating multithreading, synchronization, and basic design patterns.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Project Modals -->
-  <div id="project1" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('project1')">&times;</span>
-      <h3>MERN E-commerce Website</h3>
-      <p>Full-stack project with React, Node, Express, MongoDB. Includes product catalog, cart, checkout, responsive UI.</p>
-    </div>
-  </div>
-
-  <div id="project2" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('project2')">&times;</span>
-      <h3>Java Threads & Design Patterns</h3>
-      <p>Java projects demonstrating multithreading, synchronization, and basic design patterns.</p>
-    </div>
-  </div>
-
   <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" class="container text-center">
     <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <p>HTML</p>
-        <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
-      </div>
-      <div class="skill">
-        <p>CSS</p>
-        <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
-      </div>
-      <div class="skill">
-        <p>JavaScript</p>
-        <div class="skill-bar"><div class="skill-level" style="width:80%"></div></div>
-      </div>
-      <div class="skill">
-        <p>React.js</p>
-        <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
-      </div>
+    <div class="skills d-flex flex-wrap justify-content-center">
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">React.js</span>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="container text-center">
     <h2>Contact Me</h2>
     <p>Email: manoharansubasthican@gmail.com</p>
     <p>Phone: 0711300812</p>
-    <form id="contact-form">
-      <input type="text" name="from_name" placeholder="Your Name" required>
-      <input type="email" name="reply_to" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+    <form id="contact-form" class="d-flex flex-column align-items-center gap-3">
+      <input type="text" name="from_name" class="form-control w-75" placeholder="Your Name" required>
+      <input type="email" name="reply_to" class="form-control w-75" placeholder="Your Email" required>
+      <textarea name="message" class="form-control w-75" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary btn-lg w-50">Send Message</button>
       <p id="form-message"></p>
     </form>
   </section>
@@ -108,40 +100,8 @@
     <p>&copy; 2025 Subasthican. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior:'smooth' });
-      });
-    });
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    // Dark / Light mode
-    const toggleBtn = document.getElementById('toggleTheme');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    });
-
-    // Modal functions
-    function openModal(id) { document.getElementById(id).style.display = 'block'; }
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-    window.onclick = function(event) {
-      if(event.target.classList.contains('modal')) { event.target.style.display = 'none'; }
-    }
-
-    // EmailJS form
-    (function() { emailjs.init("YOUR_USER_ID"); })();
-    const form = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',this)
-        .then(()=>{ formMessage.textContent="Message sent successfully!"; form.reset(); })
-        .catch(()=>{ formMessage.textContent="Failed to send message."; });
-    });
-  </script>
 </body>
 </html>
