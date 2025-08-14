@@ -1,10 +1,33 @@
-/* Custom Styles for Subasthican Portfolio */
-
-/* Body */
+/* General */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #e6f0ff;
     color: #0b1d51;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #0d47a1 !important;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .badge {
+    background-color: #0d47a1;
+    color: #fff;
+}
+
+body.dark-mode footer {
+    background-color: #0d47a1;
 }
 
 /* Hero Section */
@@ -17,6 +40,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: background 0.3s;
 }
 
 .hero h1 {
@@ -41,7 +65,11 @@ body {
     transform: translateY(-5px);
 }
 
-/* Section Headings */
+/* Sections */
+section {
+    padding: 60px 20px;
+}
+
 section h2 {
     color: #0d47a1;
     margin-bottom: 30px;
@@ -92,14 +120,7 @@ footer {
 
 /* Responsive */
 @media (max-width:768px){
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hero p {
-        font-size: 1.2rem;
-    }
-    .skills .badge {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+    .skills .badge { font-size: 1rem; padding: 10px 20px; }
 }
