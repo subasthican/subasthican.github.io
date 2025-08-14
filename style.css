@@ -74,9 +74,15 @@ nav .nav-links a:hover {
 
 /* Hero Section */
 .hero {
+  height: 100vh; /* full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
   text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(to bottom right, rgba(25,118,210,0.8), rgba(13,71,161,0.8)), url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
+  padding: 0 20px;
+  background: linear-gradient(to bottom right, rgba(25,118,210,0.8), rgba(13,71,161,0.8)),
+              url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
   color: white;
   border-bottom-left-radius: 50% 10%;
   border-bottom-right-radius: 50% 10%;
@@ -84,34 +90,32 @@ nav .nav-links a:hover {
 }
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 60px;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero p {
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 30px;
 }
 
 .hero .btn {
   background: #ffd700;
   color: #0b1d51;
-  padding: 14px 35px;
-  text-decoration: none;
+  padding: 16px 40px;
   border-radius: 30px;
   font-weight: bold;
-  transition: all 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .hero .btn:hover {
-  transform: translateY(-5px);
   background: #ffb700;
+  transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-/* Section Titles */
+/* Sections */
 section {
   max-width: 1000px;
   margin: 60px auto;
@@ -214,16 +218,29 @@ body.dark .modal-content {
 /* Skills */
 .skills-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
-  align-items: flex-start;
-  max-width: 700px;
+  justify-content: center;
+  max-width: 900px;
   margin: 0 auto;
+}
+
+.skill {
+  flex: 1 1 250px;
+  background: rgba(25,118,210,0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
 }
 
 .skill p {
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .skill-bar {
@@ -247,6 +264,7 @@ body.dark .skill-bar {
 }
 
 @keyframes fillSkill {
+  from { width: 0; }
   to { width: var(--skill-width); }
 }
 
@@ -317,4 +335,5 @@ footer {
   .hero h1 { font-size: 38px; }
   .hero p { font-size: 18px; }
   .projects-container { justify-content: center; }
+  .skills-container { flex-direction: column; }
 }
