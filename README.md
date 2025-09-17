@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Manoharan Subasthican - Personal Portfolio
 
 A modern, interactive personal portfolio website built with React.js and Tailwind CSS. Features smooth animations, 3D effects, dark/light mode toggle, and a responsive design.
@@ -172,3 +173,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ---
 
 ⭐ Star this repository if you found it helpful!
+=======
+# subasthican.github.io
+My personal portfolio website
+>>>>>>> 1c03dc9ab5e695a3bc86dbf5772759b25b38aa54
