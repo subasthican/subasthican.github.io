@@ -5,21 +5,19 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-         uses: actions/checkout@v3
-         with:
-           lfs: true
-
-        - name: Pull LFS files
-          run: git lfs pull
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
@@ -28,9 +26,9 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Build project
-         run: npm run build
-         env:
-           CI: false
+        run: npm run build
+        env:
+          CI: false
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -38,4 +36,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           cname: subasthican.me
-         force_orphan: true
+          force_orphan: true
