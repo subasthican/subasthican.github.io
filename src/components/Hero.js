@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload, FaTimes } from 'react-icons/fa';
 
-const Hero = () => {
+const Hero = ({ isDarkMode }) => {
   const heroRef = useRef(null);
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
@@ -52,10 +52,10 @@ const Hero = () => {
       {/* Parallax Background */}
       <div
         ref={heroRef}
-        className="absolute inset-0 bg-gradient-to-br from-primary via-blue-600 to-purple-700 opacity-90"
+        className="absolute inset-0 bg-transparent"
       >
         <div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}
@@ -93,15 +93,15 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-            <span className="block drop-shadow-lg">Manoharan</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+            <span className={`block drop-shadow-lg ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Manoharan</span>
             <span className="block text-yellow-300 drop-shadow-2xl font-extrabold">Subasthican</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-200 mb-6">
-            Data Science Intern | Full-Stack Developer | MERN Stack & Python Enthusiast
+          <p className={`text-xl sm:text-2xl mb-6 ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+            Undergraduate Data Science Student | Full-Stack Developer | MERN Stack & Python
           </p>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Building data-driven web applications and creating solutions that combine programming, analytics, and user experience.
+          <p className={`text-lg max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            BSc (Hons) IT student at SLIIT specializing in Data Science, building data-driven web applications with clean, maintainable code.
           </p>
         </motion.div>
 
@@ -131,7 +131,11 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('contact')}
-            className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all duration-300"
+            className={`px-8 py-4 font-semibold rounded-full transition-all duration-300 ${
+              isDarkMode
+                ? 'border-2 border-white text-white hover:bg-white hover:text-primary'
+                : 'border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white'
+            }`}
           >
             Get In Touch
           </motion.button>
@@ -160,7 +164,11 @@ const Hero = () => {
             href="https://github.com/subasthican"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-accent transition-colors duration-300"
+            className={`${
+              isDarkMode
+                ? 'text-white hover:text-accent'
+                : 'text-gray-900 hover:text-blue-600'
+            } transition-colors duration-300`}
             aria-label="GitHub"
           >
             <FaGithub size={24} />
@@ -168,10 +176,14 @@ const Hero = () => {
           <motion.a
             whileHover={{ scale: 1.2, rotate: -5 }}
             whileTap={{ scale: 0.9 }}
-            href="https://linkedin.com/in/subasthican"
+            href="https://linkedin.com/in/manoharansubasthican"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-accent transition-colors duration-300"
+            className={`${
+              isDarkMode
+                ? 'text-white hover:text-blue-400'
+                : 'text-gray-900 hover:text-blue-600'
+            } transition-colors duration-300`}
             aria-label="LinkedIn"
           >
             <FaLinkedin size={24} />
@@ -189,12 +201,16 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
+          className={`w-6 h-10 border-2 rounded-full flex justify-center ${
+            isDarkMode ? 'border-white' : 'border-gray-900'
+          }`}
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-white rounded-full mt-2"
+            className={`w-1 h-3 rounded-full mt-2 ${
+              isDarkMode ? 'bg-white' : 'bg-gray-900'
+            }`}
           />
         </motion.div>
       </motion.div>
@@ -228,7 +244,7 @@ const Hero = () => {
                 </button>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
-                BSc IT Student | MERN Stack Developer | SLIIT
+                BSc (Hons) IT Student | Data Science Undergraduate | SLIIT
               </p>
             </div>
             
@@ -237,7 +253,7 @@ const Hero = () => {
               <div className="mb-8">
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Page 1</h4>
                 <img
-                  src={require("../Manoharan Subasthican_intern_cv_page1.png")}
+                  src={require("../Manoharan Subasthican_intern_cv_page1.jpg")}
                   alt="CV Page 1"
                   className="w-full h-auto rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
                 />
@@ -247,7 +263,7 @@ const Hero = () => {
               <div className="mb-8">
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Page 2</h4>
                 <img
-                  src={require("../Manoharan Subasthican_intern_cv_page2.png")}
+                  src={require("../Manoharan Subasthican_intern_cv_page2.jpg")}
                   alt="CV Page 2"
                   className="w-full h-auto rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
                 />

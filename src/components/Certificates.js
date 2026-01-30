@@ -8,19 +8,30 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: "Anaconda Python for Data Science Professional Certificate",
-      issuer: "Anaconda",
+      title: "Python for Beginners",
+      issuer: "University of Moratuwa",
       date: "2024",
-      description: "Professional certificate in Python for Data Science applications and analysis",
-      image: require("../CertificateOfCompletion_Anaconda_Python_for_Data_Science_Professional_Certificate_page1.png"),
-      linkedin: "https://www.linkedin.com/posts/manoharansubasthican_certificate-of-completion-activity-7372202939513487360-9eSO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOv8V8BjTtkGWuhy4wNtwJAqpJwXfohZkE",
-      category: "Data Science",
+      description: "Professional certification in Python programming for beginners from University of Moratuwa",
+      image: require("../Python_for_Beginners_E-Certifice_moratuwa.jpg"),
+      linkedin: "https://www.linkedin.com/in/manoharansubasthican",
+      category: "Python",
       featured: true
     },
     {
       id: 2,
+      title: "Anaconda Python for Data Science Professional Certificate",
+      issuer: "LinkedIn Learning",
+      date: "2024",
+      description: "Professional certificate in Python for Data Science applications and analysis",
+      image: require("../CertificateOfCompletion_Anaconda_Python_for_Data_Science_Professional_Certificate_page1.png"),
+      linkedin: "https://www.linkedin.com/posts/manoharansubasthican_certificate-of-completion-activity-7372202939513487360-9eSO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOv8V8BjTtkGWuhy4wNtwJAqpJwXfohZkE",
+      category: "Python",
+      featured: true
+    },
+    {
+      id: 3,
       title: "Career Essentials in Data Analysis",
-      issuer: "Microsoft and LinkedIn",
+      issuer: "LinkedIn Learning",
       date: "2024",
       description: "Comprehensive data analysis skills and career development certification",
       image: require("../CertificateOfCompletion_Career_Essentials_in_Data_Analysis_by_Microsoft_and_LinkedIn_page1.png"),
@@ -29,47 +40,47 @@ const Certificates = () => {
       featured: true
     },
     {
-      id: 3,
+      id: 4,
       title: "Machine Learning Statistical Foundations Professional Certificate",
-      issuer: "Wolfram Research",
+      issuer: "LinkedIn Learning",
       date: "2024",
       description: "Advanced statistical foundations for machine learning applications",
       image: require("../CertificateOfCompletion_Machine_Learning_Statistical_Foundations_Professional_Certificate_by_Wolfram_Research_page1.png"),
       linkedin: "https://www.linkedin.com/posts/manoharansubasthican_certificate-of-completion-activity-7371919214418444288-dkFk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOv8V8BjTtkGWuhy4wNtwJAqpJwXfohZkE",
       category: "Machine Learning",
-      featured: true
-    },
-    {
-      id: 4,
-      title: "Building Deep Learning Applications with Keras",
-      issuer: "Online Course",
-      date: "2024",
-      description: "Deep learning applications development using Keras framework",
-      image: require("../CertificateOfCompletion_Building_Deep_Learning_Applications_with_Keras_page1.png"),
-      linkedin: "#",
-      category: "Deep Learning",
       featured: false
     },
     {
       id: 5,
-      title: "Next.js Creating and Hosting a FullStack Site",
-      issuer: "Online Course",
+      title: "Building Deep Learning Applications with Keras",
+      issuer: "LinkedIn Learning",
       date: "2024",
-      description: "Full-stack web development with Next.js and deployment",
-      image: require("../CertificateOfCompletion_Next.js_Creating_and_Hosting_a_FullStack_Site_page1.png"),
-      linkedin: "#",
-      category: "Web Development",
+      description: "Professional certificate in deep learning using Keras framework",
+      image: require("../CertificateOfCompletion_Building_Deep_Learning_Applications_with_Keras_page1.png"),
+      linkedin: "https://www.linkedin.com/in/manoharansubasthican",
+      category: "Deep Learning",
       featured: false
     },
     {
       id: 6,
-      title: "Preparing for the Future of Work with AI Agents",
-      issuer: "Online Course",
+      title: "Next.js: Creating and Hosting a FullStack Site",
+      issuer: "LinkedIn Learning",
       date: "2024",
-      description: "AI agents and future workplace preparation certification",
+      description: "Full-stack development with Next.js and modern web technologies",
+      image: require("../CertificateOfCompletion_Next.js_Creating_and_Hosting_a_FullStack_Site_page1.png"),
+      linkedin: "https://www.linkedin.com/in/manoharansubasthican",
+      category: "Web Development",
+      featured: false
+    },
+    {
+      id: 7,
+      title: "Preparing for the Future of Work with AI Agents",
+      issuer: "LinkedIn Learning",
+      date: "2024",
+      description: "Professional insights into AI agents and future of work trends",
       image: require("../CertificateOfCompletion_Preparing_for_the_Future_of_Work_with_AI_Agents_page1.png"),
-      linkedin: "#",
-      category: "AI & Future Work",
+      linkedin: "https://www.linkedin.com/in/manoharansubasthican",
+      category: "Artificial Intelligence",
       featured: false
     }
   ];
@@ -202,89 +213,91 @@ const Certificates = () => {
         </div>
 
         {/* Other Certificates */}
-        <div>
-          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">
-            Additional Certifications
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherCerts.map((cert, index) => (
-              <motion.div
-                key={cert.id}
-                data-aos="fade-up"
-                data-aos-delay={index * 50}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -4,
-                  transition: { duration: 0.3 }
-                }}
-                whileTap={{ scale: 0.98 }}
-                className="group cursor-pointer"
-                onClick={() => openModal(cert)}
-              >
-                <div className="bg-white dark:bg-dark-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
-                  {/* Certificate Preview */}
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark-300 dark:to-dark-400 flex items-center justify-center">
-                    <img
-                      src={cert.image}
-                      alt={cert.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                      onError={(e) => {
-                        // Fallback to placeholder if image doesn't exist
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
-                      <div className="text-center">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-3">
-                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
-                          </svg>
+        {otherCerts.length > 0 && (
+          <div>
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">
+              Additional Certifications
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherCerts.map((cert, index) => (
+                <motion.div
+                  key={cert.id}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 50}
+                  whileHover={{ 
+                    scale: 1.02,
+                    y: -4,
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group cursor-pointer"
+                  onClick={() => openModal(cert)}
+                >
+                  <div className="bg-white dark:bg-dark-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+                    {/* Certificate Preview */}
+                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark-300 dark:to-dark-400 flex items-center justify-center">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        onError={(e) => {
+                          // Fallback to placeholder if image doesn't exist
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
+                        <div className="text-center">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <p className="text-xs font-medium text-gray-600 dark:text-gray-300">Certificate</p>
                         </div>
-                        <p className="text-xs font-medium text-gray-600 dark:text-gray-300">Certificate</p>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-2 left-2">
+                        <span className="px-2 py-1 bg-black/20 backdrop-blur-sm text-white rounded text-xs font-medium border border-white/20">
+                          {cert.category}
+                        </span>
+                      </div>
+                      <div className="absolute top-2 right-2">
+                        <span className="px-2 py-1 bg-black/50 text-white rounded text-xs font-medium">
+                          {cert.date}
+                        </span>
                       </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute top-2 left-2">
-                      <span className="px-2 py-1 bg-black/20 backdrop-blur-sm text-white rounded text-xs font-medium border border-white/20">
-                        {cert.category}
-                      </span>
-                    </div>
-                    <div className="absolute top-2 right-2">
-                      <span className="px-2 py-1 bg-black/50 text-white rounded text-xs font-medium">
-                        {cert.date}
-                      </span>
+                    
+                    {/* Certificate Details */}
+                    <div className="p-4">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
+                        {cert.title}
+                      </h4>
+                      
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+                        {cert.issuer}
+                      </p>
+                      
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openModal(cert);
+                        }}
+                        className="w-full py-1 px-2 bg-gradient-to-r from-primary to-blue-600 text-white rounded text-xs font-medium hover:from-blue-600 hover:to-primary transition-all duration-300 flex items-center justify-center gap-1 edge-glow pulse-glow"
+                      >
+                        <FaEye className="text-xs" />
+                        View Details
+                      </motion.button>
                     </div>
                   </div>
-                  
-                  {/* Certificate Details */}
-                  <div className="p-4">
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
-                      {cert.title}
-                    </h4>
-                    
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
-                      {cert.issuer}
-                    </p>
-                    
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openModal(cert);
-                      }}
-                      className="w-full py-1 px-2 bg-gradient-to-r from-primary to-blue-600 text-white rounded text-xs font-medium hover:from-blue-600 hover:to-primary transition-all duration-300 flex items-center justify-center gap-1 edge-glow pulse-glow"
-                    >
-                      <FaEye className="text-xs" />
-                      View Details
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Certificate Modal */}
         {selectedCert && (

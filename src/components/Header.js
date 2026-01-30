@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
+import GlassSurface from './GlassSurface';
 
 const Header = ({ isDarkMode, toggleTheme }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -36,15 +27,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? `${
-              isDarkMode
-                ? 'bg-dark-200/95 backdrop-blur-md shadow-lg'
-                : 'bg-white/95 backdrop-blur-md shadow-lg'
-            }`
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -64,21 +47,32 @@ const Header = ({ isDarkMode, toggleTheme }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-2">
               {navItems.map((item) => (
-                <motion.button
+                <motion.div
                   key={item.id}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    isDarkMode
-                      ? 'text-gray-300 hover:text-white hover:bg-dark-300'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-100'
-                  }`}
                 >
-                  {item.label}
-                </motion.button>
+                  <GlassSurface
+                    width="auto"
+                    height={40}
+                    borderRadius={8}
+                    brightness={90}
+                    opacity={0.55}
+                    blur={8}
+                    displace={0.1}
+                    className="px-4"
+                    style={{ minWidth: 'auto', paddingLeft: '1rem', paddingRight: '1rem' }}
+                  >
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-sm font-medium whitespace-nowrap"
+                    >
+                      {item.label}
+                    </button>
+                  </GlassSurface>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -125,27 +119,32 @@ const Header = ({ isDarkMode, toggleTheme }) => {
             height: isMobileMenuOpen ? 'auto' : 0
           }}
           transition={{ duration: 0.3 }}
-          className={`md:hidden overflow-hidden ${
-            isDarkMode ? 'bg-dark-200' : 'bg-white'
-          } rounded-lg mt-2 shadow-lg`}
+          className="md:hidden overflow-hidden mt-2"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                  isDarkMode
-                    ? 'text-gray-300 hover:text-white hover:bg-dark-300'
-                    : 'text-gray-700 hover:text-primary hover:bg-gray-100'
-                }`}
-              >
-                {item.label}
-              </motion.button>
-            ))}
-          </div>
+          <GlassSurface
+            width="100%"
+            height="auto"
+            borderRadius={12}
+            brightness={90}
+            opacity={0.55}
+            blur={8}
+            displace={0.1}
+            className="w-full"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 w-full">
+              {navItems.map((item) => (
+                <motion.button
+                  key={item.id}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+            </div>
+          </GlassSurface>
         </motion.div>
       </nav>
     </motion.header>

@@ -10,6 +10,7 @@ import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
+import Ballpit from './components/Ballpit';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -63,18 +64,39 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       isDarkMode ? 'bg-dark-100 text-white' : 'bg-white text-gray-900'
-    }`}>
+    }`}
+    style={{ position: 'relative', backgroundColor: isDarkMode ? '#0b0a1f' : '#ffffff' }}
+    >
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
+        <Ballpit
+          count={100}
+          colors={[0xffffff, 0xe2e8f0, 0xcbd5e1, 0x8b5cf6, 0x4f46e5]}
+          ambientColor={0xffffff}
+          ambientIntensity={0.6}
+          lightIntensity={220}
+          materialParams={{ metalness: 0.5, roughness: 0.35, clearcoat: 1, clearcoatRoughness: 0.1 }}
+          minSize={0.45}
+          maxSize={1.05}
+          gravity={0.01}
+          friction={0.9975}
+          wallBounce={0.95}
+          followCursor={false}
+        />
+      </div>
+
+      <div className="relative z-10">
       <Header 
         isDarkMode={isDarkMode} 
         toggleTheme={toggleTheme}
       />
-      <Hero />
+      <Hero isDarkMode={isDarkMode} />
       <About />
       <Projects openModal={openModal} />
       <Skills />
       <Certificates />
       <Contact />
-      <Footer />
+      <Footer isDarkMode={isDarkMode} />
+      </div>
       
       {isModalOpen && (
         <Modal 

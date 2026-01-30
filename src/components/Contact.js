@@ -81,7 +81,7 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://linkedin.com/in/subasthican',
+      url: 'https://linkedin.com/in/manoharansubasthican',
       color: 'hover:text-blue-600'
     }
   ];

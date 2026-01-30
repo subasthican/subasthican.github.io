@@ -78,14 +78,24 @@ const Modal = ({ project, onClose, isDarkMode }) => {
             <FaTimes size={16} />
           </motion.button>
 
-          {/* Project Image */}
-          <div className="relative h-64 sm:h-80 overflow-hidden rounded-t-2xl">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          {/* Project Image/Video */}
+          <div className="relative h-64 sm:h-80 overflow-hidden rounded-t-2xl bg-black">
+            {project.video ? (
+              <video
+                key={project.id}
+                src={project.video}
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
             
             {/* Project Links */}
             <div className="absolute top-4 left-4 flex space-x-2">

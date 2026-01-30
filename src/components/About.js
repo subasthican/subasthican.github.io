@@ -26,21 +26,19 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I am a dedicated Data Science Intern and full-stack developer with experience in MERN stack 
-              and Python for data analysis. I enjoy building data-driven web applications and creating 
-              solutions that combine programming, analytics, and user experience.
+              I am an undergraduate student at SLIIT pursuing a BSc (Hons) in Information Technology, 
+              specializing in Data Science. I work with Python, the MERN stack, and data analysis tools to 
+              build data-driven web applications with clean, maintainable code.
             </p>
             
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              My passion lies in transforming complex data into actionable insights through innovative 
-              web applications. I focus on clean code, user experience, and continuous learning in both 
-              web development and data science domains.
+              My focus is on turning data into actionable insights and building full-stack solutions that 
+              balance usability, performance, and analytics. I enjoy continuous learning across data science 
+              and modern web development.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              Currently developing DollarsElectro.lk, an e-commerce platform, while contributing to 
-              academic projects including Construction Management and Online Tour Guide systems. 
-              I'm pursuing BSc IT at SLIIT with a focus on full-stack development and data science.
+              Recent work includes <span className="font-semibold text-gray-900 dark:text-white">Academic Projects:</span> DollarsElectro (MERN e-commerce), Construction Management System, and Online Tour Guide systems that showcase my full-stack development expertise. Additionally, I've worked on AquaGlow wellness apps (Android in Kotlin & iOS in Swift) and FocusTime (Material Design 3 productivity app).
             </p>
 
             {/* Skills Preview */}
@@ -53,8 +51,8 @@ const About = () => {
                   'MERN Stack Development',
                   'Python & Data Analysis',
                   'Machine Learning',
-                  'Database Management',
-                  'API Integration',
+                  'SQL & NoSQL Databases',
+                  'Data Visualization',
                   'Team Collaboration'
                 ].map((skill, index) => (
                   <motion.div
@@ -147,10 +145,10 @@ const About = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: '5+', label: 'Projects Completed' },
-            { number: '8+', label: 'Technologies Mastered' },
-            { number: '2+', label: 'Years at SLIIT' },
-            { number: '100%', label: 'Passion Driven' }
+            { number: '9', label: 'Key Projects' },
+            { number: '10+', label: 'Core Technologies' },
+            { number: '2023', label: 'SLIIT Intake' },
+            { number: '100%', label: 'Learning Mindset' }
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
