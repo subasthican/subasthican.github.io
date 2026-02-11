@@ -76,7 +76,7 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
             Web Development
           </h3>
-          <div style={{ height: '120px', position: 'relative', overflow: 'hidden'}}>
+          <div className="logo-loop-frame">
             <LogoLoop
               logos={webDevLogos}
               speed={80}
@@ -100,7 +100,7 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
             Data Science & Programming
           </h3>
-          <div style={{ height: '120px', position: 'relative', overflow: 'hidden'}}>
+          <div className="logo-loop-frame">
             <LogoLoop
               logos={dataScienceLogos}
               speed={80}
@@ -124,7 +124,7 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
             Tools & Technologies
           </h3>
-          <div style={{ height: '120px', position: 'relative', overflow: 'hidden'}}>
+          <div className="logo-loop-frame">
             <LogoLoop
               logos={toolsLogos}
               speed={80}

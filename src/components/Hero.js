@@ -93,16 +93,18 @@ const Hero = ({ isDarkMode }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            <span className={`block drop-shadow-lg ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Manoharan</span>
-            <span className="block text-yellow-300 drop-shadow-2xl font-extrabold">Subasthican</span>
-          </h1>
-          <p className={`text-xl sm:text-2xl mb-6 ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-            Undergraduate Data Science Student | Full-Stack Developer | MERN Stack & Python
-          </p>
-          <p className={`text-lg max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            BSc (Hons) IT student at SLIIT specializing in Data Science, building data-driven web applications with clean, maintainable code.
-          </p>
+          <div className="glass hero-text-glow rounded-2xl px-6 py-5 inline-block">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+              <span className={`block drop-shadow-lg ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Manoharan</span>
+              <span className="block text-yellow-300 drop-shadow-2xl font-extrabold">Subasthican</span>
+            </h1>
+            <p className={`text-xl sm:text-2xl mb-6 ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+              Undergraduate Data Science Student | Full-Stack Developer | MERN Stack & Python
+            </p>
+            <p className={`text-lg max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              BSc (Hons) IT student at SLIIT specializing in Data Science, building data-driven web applications with clean, maintainable code.
+            </p>
+          </div>
         </motion.div>
 
         {/* CTA Buttons */}

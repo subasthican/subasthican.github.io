@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 import GlassSurface from './GlassSurface';
 
 const Header = ({ isDarkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -27,7 +37,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -39,7 +49,9 @@ const Header = ({ isDarkMode, toggleTheme }) => {
           >
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold text-gray-900 dark:text-white hover:opacity-80 transition-opacity"
+              className={`text-2xl font-bold text-gray-900 dark:text-white hover:opacity-80 transition-transform transition-opacity duration-300 ease-out ${
+                isScrolled ? '-translate-x-6 opacity-0' : 'translate-x-0 opacity-100'
+              }`}
             >
               Portfolio
             </button>

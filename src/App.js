@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -19,14 +17,6 @@ function App() {
   const [isFinePointer, setIsFinePointer] = useState(false);
 
   useEffect(() => {
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      offset: 100
-    });
-
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
