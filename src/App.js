@@ -16,7 +16,6 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isFinePointer, setIsFinePointer] = useState(false);
 
   useEffect(() => {
     // Initialize AOS
@@ -32,18 +31,6 @@ function App() {
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       setIsDarkMode(true);
     }
-  }, []);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(pointer: fine)');
-    const updatePointer = () => setIsFinePointer(mediaQuery.matches);
-    updatePointer();
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', updatePointer);
-      return () => mediaQuery.removeEventListener('change', updatePointer);
-    }
-    mediaQuery.addListener(updatePointer);
-    return () => mediaQuery.removeListener(updatePointer);
   }, []);
 
   useEffect(() => {
@@ -93,7 +80,7 @@ function App() {
           gravity={0.01}
           friction={0.9975}
           wallBounce={0.95}
-          followCursor={isFinePointer}
+          followCursor={false}
         />
       </div>
 
