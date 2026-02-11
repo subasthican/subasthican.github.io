@@ -668,24 +668,28 @@ function createBallpit(e, t = {}) {
   const o = new w(new a(0, 0, 1), 0);
   const r = new a();
   let c = false;
+  const enableInteraction = t.followCursor !== false;
 
-  e.style.touchAction = 'none';
-  e.style.userSelect = 'none';
-  e.style.webkitUserSelect = 'none';
+  let h = null;
+  if (enableInteraction) {
+    e.style.touchAction = 'none';
+    e.style.userSelect = 'none';
+    e.style.webkitUserSelect = 'none';
 
-  const h = S({
-    domElement: e,
-    onMove() {
-      n.setFromCamera(h.nPosition, i.camera);
-      i.camera.getWorldDirection(o.normal);
-      n.ray.intersectPlane(o, r);
-      s.physics.center.copy(r);
-      s.config.controlSphere0 = true;
-    },
-    onLeave() {
-      s.config.controlSphere0 = false;
-    }
-  });
+    h = S({
+      domElement: e,
+      onMove() {
+        n.setFromCamera(h.nPosition, i.camera);
+        i.camera.getWorldDirection(o.normal);
+        n.ray.intersectPlane(o, r);
+        s.physics.center.copy(r);
+        s.config.controlSphere0 = true;
+      },
+      onLeave() {
+        s.config.controlSphere0 = false;
+      }
+    });
+  }
   function initialize(e) {
     if (s) {
       i.clear();
@@ -713,7 +717,7 @@ function createBallpit(e, t = {}) {
       c = !c;
     },
     dispose() {
-      h.dispose();
+      h?.dispose();
       i.dispose();
     }
   };
