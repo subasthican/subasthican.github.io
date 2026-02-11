@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ec76c58.css",
+    "main.js": "/static/js/main.206da58e.js",
+    "static/media/Python_for_Beginners_E-Certifice_moratuwa.jpg": "/static/media/Python_for_Beginners_E-Certifice_moratuwa.d8ab506f89f28bd59cbf.jpg",
+    "static/media/myphoto.jpg": "/static/media/myphoto.cb99c44446afa11fbc0e.jpg",
+    "static/media/Manoharan Subasthican_intern_cv_page1.jpg": "/static/media/Manoharan Subasthican_intern_cv_page1.5a21c99c38547adf5947.jpg",
+    "static/media/Manoharan Subasthican_intern_cv_page2.jpg": "/static/media/Manoharan Subasthican_intern_cv_page2.929c31b8fe6ac0f5f8a4.jpg",
+    "static/media/CertificateOfCompletion_Machine_Learning_Statistical_Foundations_Professional_Certificate_by_Wolfram_Research_page1.png": "/static/media/CertificateOfCompletion_Machine_Learning_Statistical_Foundations_Professional_Certificate_by_Wolfram_Research_page1.826f146ad967fb3a201a.png",
+    "static/media/CertificateOfCompletion_Anaconda_Python_for_Data_Science_Professional_Certificate_page1.png": "/static/media/CertificateOfCompletion_Anaconda_Python_for_Data_Science_Professional_Certificate_page1.d57bf9f3dc11a607339e.png",
+    "static/media/CertificateOfCompletion_Career_Essentials_in_Data_Analysis_by_Microsoft_and_LinkedIn_page1.png": "/static/media/CertificateOfCompletion_Career_Essentials_in_Data_Analysis_by_Microsoft_and_LinkedIn_page1.b55ed96fbf9e7eeb53d0.png",
+    "static/media/CertificateOfCompletion_Preparing_for_the_Future_of_Work_with_AI_Agents_page1.png": "/static/media/CertificateOfCompletion_Preparing_for_the_Future_of_Work_with_AI_Agents_page1.925b2219356bcd27bded.png",
+    "static/media/CertificateOfCompletion_Next.js_Creating_and_Hosting_a_FullStack_Site_page1.png": "/static/media/CertificateOfCompletion_Next.js_Creating_and_Hosting_a_FullStack_Site_page1.3053527b3fbffff758b6.png",
+    "static/media/CertificateOfCompletion_Building_Deep_Learning_Applications_with_Keras_page1.png": "/static/media/CertificateOfCompletion_Building_Deep_Learning_Applications_with_Keras_page1.3ca98221b17ee3453f80.png",
+    "index.html": "/index.html",
+    "main.6ec76c58.css.map": "/static/css/main.6ec76c58.css.map",
+    "main.206da58e.js.map": "/static/js/main.206da58e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ec76c58.css",
+    "static/js/main.206da58e.js"
+  ]
+}
